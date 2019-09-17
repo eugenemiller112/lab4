@@ -4,3 +4,33 @@ author: "Johnny Tamanaha, Emily Archambault, Eugene Miller, Kaiyuan Fan, Jingzhi
 date: "9/20/2019"
 output: html_document
 ---
+
+## Questions
+
+Do mothers who smoke have increased rates of premature delivery (before 270 days)?
+
+Do the newborns of mothers who smoke have smaller birth weights at every gestational age (number of days into pregnancy when child is born)?
+
+--- 
+
+## Team Plot
+
+---
+
+## Conclusions
+
+Do mothers who smoke have increased rates of premature delivery (before 270 days)?
+
+Do the newborns of mothers who smoke have smaller birth weights at every gestational age (number of days into pregnancy when child is born)?
+
+---
+
+## Recommendation 
+
+---
+
+## Individual Sections
+
+---
+
+## Individual Contribution Summaries
