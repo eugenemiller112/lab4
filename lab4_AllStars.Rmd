@@ -1,0 +1,6 @@
+---
+title: "Team All Stars Lab 4"
+author: "Johnny Tamanaha, Emily Archambault, Eugene Miller, Kaiyuan Fan, Jingzhi Zhang"
+date: "9/20/2019"
+output: html_document
+---
