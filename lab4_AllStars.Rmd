@@ -11,6 +11,8 @@ babies <- rename(babies, bwtoz = `bwt/oz`) #renaming `bwt/oz` because the "/" si
 
 smoke.labs <- c("Nonsmoking", "Smoking")
 names(smoke.labs) <- c("0", "1")
+prem.labs <- c("Full Term", "Premature")
+names(prem.labs) <- c("0", "1")
 ```
 
 ## Questions
@@ -19,18 +21,20 @@ Which variables are similar between smokers and nonsmokers? Which are different?
 #Correlating Income
 ```{r, message = FALSE, warning = FALSE, fig.align='center'}
 ggplot(subset(babies, smoke != "NA")) +
-  geom_bar(mapping = aes(x = inc, y = ..prop.., fill = smoke == 1), position = "dodge") +
+  geom_bar(mapping = aes(x = inc, y = ..prop.., fill = smoke == 1), position = "dodge", color = "black") +
   theme(text = element_text(hjust = 0.5, size = 9.5), plot.title = element_text(hjust = 0.5, size = 9.5)) +
   scale_y_continuous(labels=scales::percent) + 
-  labs(x = "Income Groups", y = "Proportion", fill = "Smoker?", title = "Comparison of Income Across Smokers and Nonsmokers")
+  labs(x = "Income Groups", y = "Proportion", fill = "Smoker?", title = "Comparison of Income Across Smokers and Nonsmokers") +
+  scale_fill_brewer(palette = 3)
 ```
 #Correlating premature
 ```{r, message = FALSE, warning = FALSE, fig.align='center'}
 ggplot(subset(babies, smoke != "NA")) + 
-  geom_bar(mapping = aes(x = Premature, y = ..prop.., fill = smoke == 1), position = "dodge") + 
+  geom_bar(mapping = aes(x = Premature, y = ..prop.., fill = smoke == 1), position = "dodge", color = "black") + 
   scale_y_continuous(labels=scales::percent) + 
   labs(y = "Percentage of Births", fill = "Is The Mother a Smoker?", x = "Normal Birth                                  Premature Birth", title = "Comparison of Percentage of Births That are Premature in Smoking and Nonsmoking Groups") +
-  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank(), text = element_text(hjust = 0.5, size = 9.5), plot.title = element_text(hjust = 0.5, size = 9.5))
+  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank(), text = element_text(hjust = 0.5, size = 9.5), plot.title = element_text(hjust = 0.5, size = 9.5)) +
+  scale_fill_brewer(palette = 3)
 ```
 
 Do mothers who smoke have increased rates of premature delivery (before 270 days)?
@@ -46,13 +50,14 @@ Question 2:
 
 ```{r, message = FALSE, warning = FALSE, fig.align='center'}
 ggplot(subset(babies, smoke != "NA")) +
-  geom_point(mapping = aes(y = bwtoz, x = gestation)) +
+  geom_jitter(mapping = aes(y = bwtoz, x = gestation)) +
   geom_smooth(mapping = aes(y = bwtoz, x = gestation, color = smoke == 1), method = lm, se = FALSE) +
   coord_cartesian(xlim = c(200,300))+
   labs(y = "Weight (oz)", x = "Gestation Period (Days)", title = "Comparison of Baby Weight Distribution Between Smoking and Nonsmoking Mothers", color = "") +
   theme(text = element_text(hjust = 0.5, size = 9.5), plot.title = element_text(hjust = 0.5, size = 9.5)) +
-  scale_color_discrete(name="", breaks=c("FALSE", "TRUE"), labels=c("Nonsmoking", "Smoking"))
-
+  scale_color_discrete(name="",
+                        breaks=c("FALSE", "TRUE"),
+                        labels=c("Nonsmoking", "Smoking"))
 ```
 ---
 
@@ -69,6 +74,20 @@ Do the newborns of mothers who smoke have smaller birth weights at every gestati
 ---
 
 ## Individual Sections
+
+
+### Eugene Miller
+
+```{r, message = FALSE, warning = FALSE, fig.align='center'}
+ggplot(subset(babies, Premature != "NA" & smoke != "NA")) + 
+  geom_bar(mapping = aes(x = parity, y = ..prop.., fill = smoke == 1), show.legend = FALSE, color = "black") + 
+  facet_wrap(Premature~smoke, labeller = labeller(smoke = smoke.labs, Premature = prem.labs)) + 
+  theme(text = element_text(hjust = 0.5, size = 9.5), plot.title = element_text(hjust = 0.5, size = 9.5)) +
+  labs(x = "Number of Mother's Previous Pregnancies", y = "Proportion of Babies Born", title = "Comparison of Previous Pregnancies Across Pregnancy Period and Mother's Smoking Status") +
+  scale_fill_brewer(palette = 3)
+```
+
+This shows that amongst both full term and premature births, smoking is correlated with a higher average number of previous pregnancies that the mother has had. This suggests that smoking increases the chance of a failed pregnancy; a pregnancy that results in the fetus dying before it is born. Therefore, as smoking is correlated with a higher preportion of failed pregnancies, I recommend that we try to reduce the amount of smoking in order to reduce the number of failed pregnancies, which places stress of mothers who are trying to concieve a child.
 
 ---
 
