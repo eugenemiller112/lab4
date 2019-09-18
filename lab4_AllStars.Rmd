@@ -4,15 +4,34 @@ author: "Johnny Tamanaha, Emily Archambault, Eugene Miller, Kaiyuan Fan, Jingzhi
 date: "9/20/2019"
 output: html_document
 ---
-```{r, setup, echo = FALSE}
+```{r, setup, echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
 babies <- read_csv("https://raw.githubusercontent.com/ervance1/Sp2018-Data-Science-repo/master/babies2a.dat")
 babies <- rename(babies, bwtoz = `bwt/oz`) #renaming `bwt/oz` because the "/" sign requires special care
+
+smoke.labs <- c("Nonsmoking", "Smoking")
+names(smoke.labs) <- c("0", "1")
 ```
 
 ## Questions
 
 Which variables are similar between smokers and nonsmokers? Which are different?
+#Correlating Income
+```{r, message = FALSE, warning = FALSE, fig.align='center'}
+ggplot(subset(babies, smoke != "NA")) +
+  geom_bar(mapping = aes(x = inc, y = ..prop.., fill = smoke == 1), position = "dodge") +
+  theme(text = element_text(hjust = 0.5, size = 9.5), plot.title = element_text(hjust = 0.5, size = 9.5)) +
+  scale_y_continuous(labels=scales::percent) + 
+  labs(x = "Income Groups", y = "Proportion", fill = "Smoker?", title = "Comparison of Income Across Smokers and Nonsmokers")
+```
+#Correlating premature
+```{r, message = FALSE, warning = FALSE, fig.align='center'}
+ggplot(subset(babies, smoke != "NA")) + 
+  geom_bar(mapping = aes(x = Premature, y = ..prop.., fill = smoke == 1), position = "dodge") + 
+  scale_y_continuous(labels=scales::percent) + 
+  labs(y = "Percentage of Births", fill = "Is The Mother a Smoker?", x = "Normal Birth                                  Premature Birth", title = "Comparison of Percentage of Births That are Premature in Smoking and Nonsmoking Groups") +
+  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank(), text = element_text(hjust = 0.5, size = 9.5), plot.title = element_text(hjust = 0.5, size = 9.5))
+```
 
 Do mothers who smoke have increased rates of premature delivery (before 270 days)?
 
@@ -25,11 +44,7 @@ Question 1:
 
 Question 2:
 
-```{r, message = FALSE, warning = FALSE}
-
-smoke.labs <- c("Nonsmoking", "Smoking")
-names(smoke.labs) <- c("0", "1")
-
+```{r, message = FALSE, warning = FALSE, fig.align='center'}
 ggplot(subset(babies, smoke != "NA")) +
   geom_point(mapping = aes(y = bwtoz, x = gestation)) +
   geom_smooth(mapping = aes(y = bwtoz, x = gestation, color = smoke == 1), method = lm, se = FALSE) +
