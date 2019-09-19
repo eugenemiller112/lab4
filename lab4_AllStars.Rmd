@@ -108,5 +108,12 @@ ggplot(subset(babies,Premature!="NA"), aes(bwtoz))+
   scale_fill_discrete(name="Premature",breaks=c("FALSE", "TRUE"),labels=c("Full term", "Premature"))
 ```
 
-
+###Emily Archambault 
+```{r, message = FALSE, warning=FALSE} 
+ggplot(data = babies, mapping = aes(x = mpregwt, y = bwtoz, color = mpregwt)) + 
+geom_point() + geom_smooth(method = "lm", color = "black", se = FALSE) + 
+labs(x = "Mother's Pre-Pregnancy Weight in Pounds", y = "Birth Weight in Oz", title = "Comparison of Mother's Weight and Birth Weight") + 
+theme(plot.title=element_text(family="Times"), axis.title.x =element_text(family = "Times"), axis.title.y = element_text(family = "Times"))
+```
+This graph shows that there is virtually no correlation between the pre-pregnancy weight of a mother and the weight of her child when it is born. With this is mind, we know that the mother's weight is not a hidden variable that could possibly be affecting our analysis of smokers and non-smokers.
 ## Individual Contribution Summaries
