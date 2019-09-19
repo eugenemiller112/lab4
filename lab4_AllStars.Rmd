@@ -99,5 +99,14 @@ ggplot(subset(babies, Premature != "NA" & smoke != "NA")) +
 This shows that amongst both full term and premature births, smoking is correlated with a higher average number of previous pregnancies that the mother has had. This suggests that smoking increases the chance of a failed pregnancy; a pregnancy that results in the fetus dying before it is born. Therefore, as smoking is correlated with a higher preportion of failed pregnancies, I recommend that we try to reduce the amount of smoking in order to reduce the number of failed pregnancies, which places stress of mothers who are trying to concieve a child.
 
 ---
+###Kaiyuan Fan
+```{r, message = FALSE, warning=FALSE}
+ggplot(subset(babies,Premature!="NA"), aes(bwtoz))+ 
+  geom_bar(aes(fill=Premature==1))+
+  labs(x= "Birth weight", y="Number of people", fill = "premature people", title = "The Number of people in different Birth Weight Among Premature People and Full term ")+
+  theme(text = element_text(face = "plain",color = "#FF63B8", size = 13, lineheight =1,  hjust = 0.5),plot.title = element_text (hjust = 0.1,color="#8C57A6", size =10), legend.text = element_text(color = "orange"), legend.title =element_text(color = "black") )+
+  scale_fill_discrete(name="Premature",breaks=c("FALSE", "TRUE"),labels=c("Full term", "Premature"))
+```
+
 
 ## Individual Contribution Summaries
