@@ -36,6 +36,20 @@ ggplot(subset(babies, smoke != "NA")) +
   theme(axis.text.x=element_blank(), axis.ticks.x=element_blank(), text = element_text(hjust = 0.5, size = 9.5), plot.title = element_text(hjust = 0.5, size = 9.5)) +
   scale_fill_brewer(palette = 3)
 ```
+#Correlating age
+```{r, message = FALSE, warning = FALSE, fig.align='center'}
+ggplot(subset(babies, smoke != "NA")) +  
+geom_density(mapping = aes(x = mage, group = smoke, color = smoke)) + 
+labs(x = "Age of Mother", y = "Density", title = "Comparison of Mother's Age at Termination of Pregnancy for Smokers and Non-Smokers")
+```
+#Correlating Race
+```{r, message = FALSE, warning = FALSE, fig.align='center'}
+ggplot(subset(babies, smoke != "NA")) +  
+geom_density(mapping = aes(x = mrace, group = smoke, color=smoke)) + 
+labs(x = "Race (0-5 White)", y = "Density", title = "Smoker and Non-Smoker Race Comparison")
+```
+
+
 
 Do mothers who smoke have increased rates of premature delivery (before 270 days)?
 
