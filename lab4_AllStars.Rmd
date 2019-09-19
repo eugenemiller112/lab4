@@ -45,6 +45,15 @@ Do the newborns of mothers who smoke have smaller birth weights at every gestati
 
 ## Team Plot
 Question 1:
+```{r, message = FALSE, warning=FALSE}
+ggplot(subset(babies,Premature!="NA" & smoke != "NA"), aes(smoke))  +
+  geom_bar(aes(fill = Premature == 1), width=0.5)+
+  labs(x= "Smoke", y="Count", fill = "premature people", title = "The Precentage of Premature Among Smokers and Nonsmokers ")+
+  theme(text = element_text(face = "plain",colour = "black", size = 10, lineheight = 0.9,  hjust = 0.5),plot.title = element_text (hjust = 0.1,color="blue", size =6))+
+  scale_fill_discrete(name="Premature",breaks=c("FALSE", "TRUE"),labels=c("Full term", "Premature"))
+
+```
+
 
 Question 2:
 
