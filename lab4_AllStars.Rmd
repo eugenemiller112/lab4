@@ -128,7 +128,6 @@ ggplot(data = babies, aes(x= gestation, y=bwtoz,color=smoke))+
   facet_grid(~smoke, labeller = labeller(smoke=smoker.labs))+
   labs(x="length of gestation in days",y="birth weight in ounces",title = "Length of Gestation vs. Birth Weight")
 
-ggsave("Lab 4.1.png")
 ```
 
 ## Individual Contribution Summaries
