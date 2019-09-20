@@ -161,7 +161,7 @@ geom_point() + geom_smooth(method = "lm", color = "black", se = FALSE) +
 labs(x = "Mother's Pre-Pregnancy Weight in Pounds", y = "Birth Weight in Oz", title = "Comparison of Mother's Weight and Birth Weight", color = "Mother's Weight") + 
 theme(plot.title=element_text(family="Times"), axis.title.x =element_text(family = "Times"), axis.title.y = element_text(family = "Times"))
 ```
-This graph shows that there is virtually no correlation between the pre-pregnancy weight of a mother and the weight of her child when it is born. With this is mind, we know that the mother's weight is not a hidden variable that could possibly be affecting our analysis of smokers and non-smokers.
+I attempted to answer the question of whethere there is a correlation between the pre-pregnancy weight of a mother and the weight of her child. This graph shows that there is virtually no correlation between the pre-pregnancy weight of a mother and the weight of her child when it is born. With this is mind, we know that the mother's weight is not a hidden variable that could possibly be affecting our analysis of smokers and non-smokers.
 
 ### Johnny Tamanaha
 Subquestion: Is birth weight affected by weather or not a mother has a college degree?
