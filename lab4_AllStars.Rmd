@@ -15,7 +15,7 @@ prem.labs <- c("Full Term", "Premature")
 names(prem.labs) <- c("0", "1")
 ```
 
-## Preliminary Question
+### Preliminary Question
 
 Which variables are similar between smokers and nonsmokers? Which are different?
 
