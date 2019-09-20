@@ -64,7 +64,9 @@ geom_density(mapping = aes(x = mrace, group = smoke, color=smoke)) +
 labs(x = "Race (0-5 White)", y = "Density", title = "Smoker and Non-Smoker Race Comparison")
 ```
 
+---
 
+### Two Main Questions
 
 Do mothers who smoke have increased rates of premature delivery (before 270 days)?
 
@@ -169,6 +171,7 @@ ggplot(subset(babies, med!="NA")) +
   scale_fill_discrete(name="Mother College Degree", labels=c("No","Yes")) +
   coord_flip()
 ```
+
 Plot Description: A fill aesthetic was used to differentiate the two boxplots. Outlier color and shape were defined to pronounce the outliers. The labs function was used to label the title of the plot. xlab, and ylab were used to properly label the x and y axes. The scale_x_discrete function was used to change the boxplot labels from numbers to categories. The scale_fill_discrete function was used to match the legend labels to the boxplot labels. 
 
 Findings: The data shows no significant difference for higher average birth weight for mothers who have a college degree vs mothers who don't, but mother's with a college degree have less variance on their baby's birth weight. This is highlighted by how many more outliers their are in the "no degree" boxplot in comparison to the "college degree" one. 
