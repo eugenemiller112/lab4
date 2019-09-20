@@ -176,8 +176,6 @@ ggplot(subset(babies, med!="NA")) +
   coord_flip()
 ```
 
-Plot Description: A fill aesthetic was used to differentiate the two boxplots. Outlier color and shape were defined to pronounce the outliers. The labs function was used to label the title of the plot. xlab, and ylab were used to properly label the x and y axes. The scale_x_discrete function was used to change the boxplot labels from numbers to categories. The scale_fill_discrete function was used to match the legend labels to the boxplot labels. 
-
 Findings: The data shows no significant difference for higher average birth weight for mothers who have a college degree vs mothers who don't, but mother's with a college degree have less variance on their baby's birth weight. This is highlighted by how many more outliers their are in the "no degree" boxplot in comparison to the "college degree" one. 
 
 ---
@@ -190,3 +188,5 @@ __Eugene Miller__ : I created the plot answering question 2, and plots correlati
 __Emily Archambault__: For my individual section, I created a plot that compared a mother’s pre-pregnancy weight with the weight of her baby. I used the geom_point and geom_smooth functions, used color as an aesthetic for the points to make it easier to see, added labels for the x and y axes as well as at title, and used a theme to change the font of the text. I also made the preliminary plots that compared smoking with race and age, and wrote the recommendation section.
 
 __Kaiyuan Fan__: For my individual part, I make a plot shows the number of people who is premature or full term in different weight of birth. We can find from the plot, the weight of people who is full term is mostly between 80 to 125. However, the weight of people who is premature is mostly between 95 to 150. Hence, we can conclude that premature will influence birth weight, and premature people will have less weight than people who have full term to born.
+
+__Johnny Tamanaha__: I investigated the differences between smokers and non-smokers for birth weight and gestation. I also answered why the two main questions are important and why those reasons are important. For my individual plot I used a fill aesthetic to differentiate the two boxplots. Outlier color and shape were used to defined to pronounce the outliers. The labs function was used to label the title of the plot. xlab, and ylab were used to properly label the x and y axes. The scale_x_discrete function was used to change the boxplot labels from numbers to categories. The scale_fill_discrete function was used to match the legend labels to the boxplot labels. 
