@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: "Team All Stars Lab 4"
 author: "Johnny Tamanaha, Emily Archambault, Eugene Miller, Kaiyuan Fan, Jingzhi Zhang"
@@ -19,7 +18,9 @@ names(prem.labs) <- c("0", "1")
 ## Questions
 
 Which variables are similar between smokers and nonsmokers? Which are different?
-#Correlating Income
+
+### Correlating Income
+
 ```{r, message = FALSE, warning = FALSE, fig.align='center'}
 ggplot(subset(babies, smoke != "NA")) +
   geom_bar(mapping = aes(x = inc, y = ..prop.., fill = smoke == 1), position = "dodge", color = "black") +
@@ -28,7 +29,9 @@ ggplot(subset(babies, smoke != "NA")) +
   labs(x = "Income Groups", y = "Proportion", fill = "Smoker?", title = "Comparison of Income Across Smokers and Nonsmokers") +
   scale_fill_brewer(palette = 3)
 ```
-#Correlating premature
+
+### Correlating premature births
+
 ```{r, message = FALSE, warning = FALSE, fig.align='center'}
 ggplot(subset(babies, smoke != "NA")) + 
   geom_bar(mapping = aes(x = Premature, y = ..prop.., fill = smoke == 1), position = "dodge", color = "black") + 
@@ -37,13 +40,17 @@ ggplot(subset(babies, smoke != "NA")) +
   theme(axis.text.x=element_blank(), axis.ticks.x=element_blank(), text = element_text(hjust = 0.5, size = 9.5), plot.title = element_text(hjust = 0.5, size = 9.5)) +
   scale_fill_brewer(palette = 3)
 ```
-#Correlating age
+
+### Correlating age
+
 ```{r, message = FALSE, warning = FALSE, fig.align='center'}
 ggplot(subset(babies, smoke != "NA")) +  
 geom_density(mapping = aes(x = mage, group = smoke, color = smoke)) + 
 labs(x = "Age of Mother", y = "Density", title = "Comparison of Mother's Age at Termination of Pregnancy for Smokers and Non-Smokers")
 ```
-#Correlating Race
+
+### Correlating Race
+
 ```{r, message = FALSE, warning = FALSE, fig.align='center'}
 ggplot(subset(babies, smoke != "NA")) +  
 geom_density(mapping = aes(x = mrace, group = smoke, color=smoke)) + 
@@ -111,10 +118,10 @@ ggplot(subset(babies, Premature != "NA" & smoke != "NA")) +
   scale_fill_brewer(palette = 3)
 ```
 
-This shows that amongst both full term and premature births, smoking is correlated with a higher average number of previous pregnancies that the mother has had. This suggests that smoking increases the chance of a failed pregnancy; a pregnancy that results in the fetus dying before it is born. Therefore, as smoking is correlated with a higher preportion of failed pregnancies, I recommend that we try to reduce the amount of smoking in order to reduce the number of failed pregnancies, which places stress of mothers who are trying to concieve a child.
+This shows that amongst both full term and premature births, smoking is correlated with a higher average number of previous pregnancies that the mother has had. This suggests that smoking increases the chance of a failed pregnancy; a pregnancy that results in the fetus dying before it is born. Therefore, as smoking is correlated with a higher preportion of failed pregnancies, we recommend to try to reduce the amount of smoking in order to reduce the number of failed pregnancies, which places stress of mothers who are trying to concieve a child.
 
----
-###Kaiyuan Fan
+
+### Kaiyuan Fan
 ```{r, message = FALSE, warning=FALSE}
 ggplot(subset(babies,Premature!="NA"), aes(bwtoz))+ 
   geom_bar(aes(fill=Premature==1))+
@@ -123,7 +130,7 @@ ggplot(subset(babies,Premature!="NA"), aes(bwtoz))+
   scale_fill_discrete(name="Premature",breaks=c("FALSE", "TRUE"),labels=c("Full term", "Premature"))
 ```
 
-###Emily Archambault 
+### Emily Archambault 
 ```{r, message = FALSE, warning=FALSE, fig.align='center'} 
 ggplot(data = babies, mapping = aes(x = mpregwt, y = bwtoz, color = mpregwt)) + 
 geom_point() + geom_smooth(method = "lm", color = "black", se = FALSE) + 
@@ -131,5 +138,10 @@ labs(x = "Mother's Pre-Pregnancy Weight in Pounds", y = "Birth Weight in Oz", ti
 theme(plot.title=element_text(family="Times"), axis.title.x =element_text(family = "Times"), axis.title.y = element_text(family = "Times"))
 ```
 This graph shows that there is virtually no correlation between the pre-pregnancy weight of a mother and the weight of her child when it is born. With this is mind, we know that the mother's weight is not a hidden variable that could possibly be affecting our analysis of smokers and non-smokers.
+
+---
+
 ## Individual Contribution Summaries
-=======
+
+
+__Eugene Miller__ : I created the plot answering question 2, and plots correlating income and premature births between smoker and non smokers. 
