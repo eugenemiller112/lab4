@@ -72,6 +72,12 @@ Do the newborns of mothers who smoke have smaller birth weights at every gestati
 
 --- 
 
+## Overall Questions, why they are important, and why those reasons are important.
+
+Analyzing how a mother's smoking habits affect their child's birth timing and weight is important because having that knowledge would help people make better decisions for the health of the next generation. Not only would this help lawmakers take action or doctors spread awareness about the health risks of smoking for pregnant women, but it would help pregnant women be informed about the risks that smoking has on their children. 
+
+---
+
 ## Team Plot
 Question 1:
 ```{r, message = FALSE, warning=FALSE}
