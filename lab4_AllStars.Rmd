@@ -133,6 +133,8 @@ ggplot(subset(babies,Premature!="NA"), aes(bwtoz))+
   scale_fill_discrete(name="Premature",breaks=c("FALSE", "TRUE"),labels=c("Full term", "Premature"))
 ```
 
+Findings: My plot shows the number of people who is premature or full term in different weight of birth. We can find from the plot, the weight of people who is full term is mostly between 80 to 125. However, the weight of people who is premature is mostly between 95 to 150. Hence, we can conclude that premature will influence birth weight, and premature people will have less weight than people who have full term to born.
+
 ### Emily Archambault 
 ```{r, message = FALSE, warning=FALSE, fig.align='center'} 
 ggplot(data = babies, mapping = aes(x = mpregwt, y = bwtoz, color = mpregwt)) + 
@@ -150,3 +152,5 @@ This graph shows that there is virtually no correlation between the pre-pregnanc
 __Eugene Miller__ : I created the plot answering question 2, and plots correlating income and premature births between smoker and non smokers. 
 
 __Emily Archambault__: For my individual section, I created a plot that compared a mother’s pre-pregnancy weight with the weight of her baby. I used the geom_point and geom_smooth functions, used color as an aesthetic for the points to make it easier to see, added labels for the x and y axes as well as at title, and used a theme to change the font of the text. I also made the preliminary plots that compared smoking with race and age, and wrote the recommendation section.
+
+__Kaiyuan Fan__: For my individual part, I make a plot shows the number of people who is premature or full term in different weight of birth. We can find from the plot, the weight of people who is full term is mostly between 80 to 125. However, the weight of people who is premature is mostly between 95 to 150. Hence, we can conclude that premature will influence birth weight, and premature people will have less weight than people who have full term to born.
