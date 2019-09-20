@@ -19,6 +19,13 @@ names(prem.labs) <- c("0", "1")
 
 Which variables are similar between smokers and nonsmokers? Which are different?
 
+### Correlating Birth Weight
+
+```{r}
+ggplot(subset(babies, smoke != "NA")) +
+  geom_density(mapping=aes(x = bwtoz, color = smoke==1))
+```
+
 ### Correlating Income
 
 ```{r, message = FALSE, warning = FALSE, fig.align='center'}
