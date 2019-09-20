@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 ---
 title: "Team All Stars Lab 4"
 author: "Johnny Tamanaha, Emily Archambault, Eugene Miller, Kaiyuan Fan, Jingzhi Zhang"
