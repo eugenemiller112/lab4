@@ -157,6 +157,22 @@ theme(plot.title=element_text(family="Times"), axis.title.x =element_text(family
 ```
 This graph shows that there is virtually no correlation between the pre-pregnancy weight of a mother and the weight of her child when it is born. With this is mind, we know that the mother's weight is not a hidden variable that could possibly be affecting our analysis of smokers and non-smokers.
 
+### Johnny Tamanaha
+Subquestion: Is birth weight affected by weather or not a mother has a college degree?
+```{r}
+ggplot(subset(babies, med!="NA")) +
+  geom_boxplot(mapping=aes(x=med==1, y=bwtoz, fill=med==1), outlier.color="Red", outlier.shape=1) +
+  labs(title="Distribution of Premature Births for Mothers With vs W/O a College Degree") +
+  xlab("Mother College Degree") +
+  ylab("Birth Weight (oz)") +
+  scale_x_discrete(labels=c("No", "Yes")) +
+  scale_fill_discrete(name="Mother College Degree", labels=c("No","Yes")) +
+  coord_flip()
+```
+Plot Description: A fill aesthetic was used to differentiate the two boxplots. Outlier color and shape were defined to pronounce the outliers. The labs function was used to label the title of the plot. xlab, and ylab were used to properly label the x and y axes. The scale_x_discrete function was used to change the boxplot labels from numbers to categories. The scale_fill_discrete function was used to match the legend labels to the boxplot labels. 
+
+Findings: The data shows no significant difference for higher average birth weight for mothers who have a college degree vs mothers who don't, but mother's with a college degree have less variance on their baby's birth weight. This is highlighted by how many more outliers their are in the "no degree" boxplot in comparison to the "college degree" one. 
+
 ---
 
 ## Individual Contribution Summaries
