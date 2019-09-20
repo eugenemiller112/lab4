@@ -102,6 +102,9 @@ Do the newborns of mothers who smoke have smaller birth weights at every gestati
 
 ## Recommendation 
 
+Our data supports the assertions of the original Surgeon General. There is a clear correlation between lower gestational baby weights and premature births and whether the mother smokes or not. Because there are significant implications for these factors in terms of the health of the baby, we recommend that further studies be conducted to determine where the biggest risk of babies being impacted by smoking lies. Surveys could be done in hospitals and maternal care facilities around the country, collecting information about premature births, low gestational weights, and smoking habits of the mother. If it’s found that certain areas have higher rates of these things, it would be a good location to target for policies regarding smoking.
+
+
 ---
 
 ## Individual Sections
@@ -145,3 +148,5 @@ This graph shows that there is virtually no correlation between the pre-pregnanc
 
 
 __Eugene Miller__ : I created the plot answering question 2, and plots correlating income and premature births between smoker and non smokers. 
+
+__Emily Archambault__: For my individual section, I created a plot that compared a mother’s pre-pregnancy weight with the weight of her baby. I used the geom_point and geom_smooth functions, used color as an aesthetic for the points to make it easier to see, added labels for the x and y axes as well as at title, and used a theme to change the font of the text. I also made the preliminary plots that compared smoking with race and age, and wrote the recommendation section.
