@@ -15,7 +15,7 @@ prem.labs <- c("Full Term", "Premature")
 names(prem.labs) <- c("0", "1")
 ```
 
-## Questions
+## Preliminary Question
 
 Which variables are similar between smokers and nonsmokers? Which are different?
 
@@ -23,7 +23,11 @@ Which variables are similar between smokers and nonsmokers? Which are different?
 
 ```{r}
 ggplot(subset(babies, smoke != "NA")) +
-  geom_density(mapping=aes(x = bwtoz, color = smoke==1))
+  geom_density(mapping=aes(x = bwtoz, color = smoke==1)) +
+  labs(title="Birth Weight Distributions Split by Smoking") +
+  xlab("Birth Weight (oz)") +
+  ylab("Proportion") +
+  scale_color_discrete(name="Mother Smokes", labels=c("No", "Yes"))
 ```
 
 ### Correlating Income
