@@ -313,7 +313,8 @@ ggplot(subset(babies, Premature != "NA" & smoke != "NA")) +
   geom_bar(mapping = aes(x = parity, y = ..prop.., fill = smoke == 1), show.legend = FALSE, color = "black") + 
   facet_wrap(Premature~smoke, labeller = labeller(smoke = smoke.labs, Premature = prem.labs)) + 
   theme(text = element_text(hjust = 0.5, size = 9.5), plot.title = element_text(hjust = 0.5, size = 9.5)) +
-  labs(x = "Number of Mother's Previous Pregnancies", y = "Proportion of Babies Born", title = "Comparison of Previous Pregnancies Across Pregnancy Period and Mother's Smoking Status") +
+  labs(x = "Number of Mother's Previous Pregn
+       ancies", y = "Proportion of Babies Born", title = "Comparison of Previous Pregnancies Across Pregnancy Period and Mother's Smoking Status") +
   scale_fill_brewer(palette = 3)
 >>>>>>> master
 ```
@@ -341,6 +342,19 @@ theme(plot.title=element_text(family="Times"), axis.title.x =element_text(family
 ```
 This graph shows that there is virtually no correlation between the pre-pregnancy weight of a mother and the weight of her child when it is born. With this is mind, we know that the mother's weight is not a hidden variable that could possibly be affecting our analysis of smokers and non-smokers.
 
+### Jingzhi Zhang
+```{r, echo=FALSE, messgae=FALSE, error=TRUE,warning=FALSE,fig.align='center'}
+smoker.labs <- c("never","smokes now","until preg","once did, not now")
+names(smoker.labs) <- c("0","1","2","3")
+ggplot(data = babies, aes(x= gestation, y=bwtoz,color=smoke))+
+  geom_point()+
+  geom_smooth(method=lm)+
+  facet_grid(~smoke, labeller = labeller(smoke=smoker.labs))+
+  labs(x="length of gestation in days",y="birth weight in ounces",title = "Length of Gestation vs. Birth Weight")
+
+```
+This graph shows that in the same level of birth weight in ounce, smokers have shorter length of gestation in days than nonsokers; at the same length of gestation days, babies whose mother smokes now have smaller weight than babies whose mother never smoke, which means that smoking affects the birth weights at every gestation age. Thus, as smoking is correlated with lower birth weight at every gestation age, I suggest all of the expctant should quit smoking in order to have a healthy baby.
+
 ---
 
 ## Individual Contribution Summaries
@@ -352,3 +366,4 @@ __Emily Archambault__: For my individual section, I created a plot that compared
 
 __Kaiyuan Fan__: For my individual part, I make a plot shows the number of people who is premature or full term in different weight of birth. We can find from the plot, the weight of people who is full term is mostly between 80 to 125. However, the weight of people who is premature is mostly between 95 to 150. Hence, we can conclude that premature will influence birth weight, and premature people will have less weight than people who have full term to born. Also, I create plot answering question 1.
 
+__Jngzhi Zhang__: For my individual part, I made a plot that shows the correlation of length of gestation in days and babies birth weight in ounces with smoker and nonsmoker. I used the geom_point, geom_smooth functions and facet_grid functions, and also use color to make points easier to see. I added labels for x and y axes as well as the title. I also used labs to substituted origenal labels of smoke. I also created the plot answering question one, and wrote the conclusions section.
