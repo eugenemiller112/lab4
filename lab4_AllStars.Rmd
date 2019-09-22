@@ -20,7 +20,7 @@ names(prem.labs) <- c("0", "1")
 
 Which variables are similar between smokers and nonsmokers? Which are different?
 
-### Correlating Birth Weight
+### Correlating Birth Weight (difference)
 
 ```{r}
 ggplot(subset(babies, smoke != "NA")) +
@@ -31,7 +31,7 @@ ggplot(subset(babies, smoke != "NA")) +
   scale_color_discrete(name="Mother Smokes", labels=c("No", "Yes"))
 ```
 
-### Correlating Income
+### Income (no difference)
 
 ```{r, message = FALSE, warning = FALSE, fig.align='center'}
 ggplot(subset(babies, smoke != "NA")) +
@@ -42,7 +42,7 @@ ggplot(subset(babies, smoke != "NA")) +
   scale_fill_brewer(palette = 3)
 ```
 
-### Correlating premature births
+### Premature births (difference)
 
 ```{r, message = FALSE, warning = FALSE, fig.align='center'}
 ggplot(subset(babies, smoke != "NA")) + 
@@ -53,7 +53,7 @@ ggplot(subset(babies, smoke != "NA")) +
   scale_fill_brewer(palette = 3)
 ```
 
-### Correlating age
+### Correlating age (difference)
 
 ```{r, message = FALSE, warning = FALSE, fig.align='center'}
 ggplot(subset(babies, smoke != "NA")) +  
@@ -61,7 +61,7 @@ geom_density(mapping = aes(x = mage, group = smoke, color = smoke)) +
 labs(x = "Age of Mother", y = "Density", title = "Comparison of Mother's Age at Termination of Pregnancy for Smokers and Non-Smokers")
 ```
 
-### Correlating Race
+### Correlating Race (difference)
 
 ```{r, message = FALSE, warning = FALSE, fig.align='center'}
 ggplot(subset(babies, smoke != "NA")) +  
@@ -131,6 +131,7 @@ Our data supports the assertions of the original Surgeon General. There is a cle
 
 
 ### Eugene Miller
+Subquestion: Is there a relation between parity (number of mother's previous pregnancies) and smoking status?
 
 ```{r, message = FALSE, warning = FALSE, fig.align='center'}
 ggplot(subset(babies, Premature != "NA" & smoke != "NA")) + 
@@ -197,7 +198,7 @@ This graph shows that in the same level of birth weight in ounce, smokers have s
 ## Individual Contribution Summaries
 
 
-__Eugene Miller__ : I created the plot answering question 2, and plots correlating income and premature births between smoker and non smokers. 
+__Eugene Miller__ : I created the plot answering question 2, and plots correlating income and premature births between smoker and non smokers. In the team plot I used a combination of geom_point and geom_smooth to show the differences between birth weight of smoking and nonsmoing children, across all gestational time periods. In my individual plot I examined the relationship between number of previous pregnancies and whether or not the mother smokes. I used geom_bar with a custom theme, label and graph colouration. 
 
 __Emily Archambault__: For my individual section, I created a plot that compared a mother’s pre-pregnancy weight with the weight of her baby. I used the geom_point and geom_smooth functions, used color as an aesthetic for the points to make it easier to see, added labels for the x and y axes as well as at title, and used a theme to change the font of the text. I also made the preliminary plots that compared smoking with race and age, and wrote the recommendation section.
 
